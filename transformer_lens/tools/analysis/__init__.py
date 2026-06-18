@@ -7,11 +7,22 @@ and the newer ``TransformerBridge`` (the two share the ``ActivationCache`` API).
 Tools:
     - direct_logit_attribution: Direct Logit Attribution (DLA) over components,
       layers, or attention heads.
+    - direct_path_patching: Direct Path Patching — measures a source head's
+      causal influence on a destination head's Q/K/V input.
 """
 
 from transformer_lens.tools.analysis.direct_logit_attribution import (
     DirectLogitAttribution,
     direct_logit_attribution,
 )
+from transformer_lens.tools.analysis.direct_path_patching import (
+    get_act_patch_direct_path,
+    get_act_patch_direct_path_all_sources,
+)
 
-__all__ = ["DirectLogitAttribution", "direct_logit_attribution"]
+__all__ = [
+    "DirectLogitAttribution",
+    "direct_logit_attribution",
+    "get_act_patch_direct_path",
+    "get_act_patch_direct_path_all_sources",
+]
